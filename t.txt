@@ -1,0 +1,26 @@
+ublic function up()
+	{
+		DB::table('authors')->insert(array(
+				"name"=>"Surbhi Shah",
+				"bio"=>"Surbhi is a talented writer, She is from Indore",
+				"created_at"=>date('yyyy-mm-dd h:m:s'),
+				"updated_at"=>date('yyyy-mm-dd h:m:s')
+			));
+		DB::table('authors')->insert(array(
+				"name"=>"Dhruv Shah",
+				"bio"=>"Dhruv is a talented writer, he is from Indore",
+				"created_at"=>date('yyyy-mm-dd h:m:s'),
+				"updated_at"=>date('yyyy-mm-dd h:m:s')
+			));
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		DB::table('authors')->where('name','=','Surbhi Shah')->delete();
+		DB::table('authors')->where('name','=','Dhruv Shah')->delete();
+	}
